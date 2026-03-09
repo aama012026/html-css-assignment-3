@@ -1,1 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Genos:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root {
+
+	--hydrogen-lavender: #a9889a;
+	--space-black: #29212c;
+
+	--c-text: white;
+	--c-stroke: var(--hydrogen-lavender);
+	--border: 2px solid var(--c-stroke);
+	--c-background: var(--space-black);
+}
+
+.heading-medium {
+	font-family: "Genos", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 3.3rem;
+}
+
+.heading-large {
+	font-family: "Genos", sans-serif;
+	font-weight: 500;
+	font-size: 5.5rem;
+}
+
+.center-text{
+	text-align: center;
+}
+
+.card-heading {
+	font-family: "Exo 2", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 5rem;
+	text-align: right;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	color: white;
+	background: var(--c-background);
+}
+
+h1 {
+	margin: 0;
+	padding: 0.2em 1.5rem;
+}
+
+.hero {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+}
+
+.card-nav {
+	flex: 1;
+	display: flex;
+	align-items: stretch;
+	justify-content: space-evenly;
+	border-top: var(--border);
+	border-bottom: var(--border);
+}
+
+a.card {
+	flex: 1 1 25%;
+	position: relative;
+	& > img {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;	
+	}
+	& > .overlay {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		overflow: scroll;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: stretch;
+		& > * {
+			margin: 1.5rem;
+		}
+	}
+	&:hover {
+		cursor: pointer;
+		flex-basis: 30%;
+	}
+	transition: flex-basis 250ms;
+}
+
+.banner {
+	& > h1 {
+		display: flex;
+		gap: 0.5em;
+		align-items: start;
+		justify-content: center;
+		& > :not(.divider) {
+			flex: 1;
+		}
+		& > .divider {
+			letter-spacing: 0.25ch;
+		}
+		& :first-child {
+			text-align: right;
+			letter-spacing: 0.3ch;
+		}
+		& :last-child {
+			letter-spacing: 0.15ch;
+		}
+	}
+}
+
+.outlined-text {
+	color: var(--c-text);
+	text-shadow:
+		0.1rem 0.1rem 1px var(--c-stroke),
+		-0.1rem 0.1rem 1px var(--c-stroke),
+		-0.1rem -0.1rem 1px var(--c-stroke),
+		0.1rem -0.1rem 1px var(--c-stroke);
+}
