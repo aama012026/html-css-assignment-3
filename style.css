@@ -8,6 +8,8 @@
 	--c-text: white;
 	--c-stroke: var(--hydrogen-lavender);
 	--border: 2px solid var(--c-stroke);
+	--glass-outline-offset: -1px;
+	--glass-outline: 1px solid #fff2;
 	--c-background: var(--space-black);
 }
 
@@ -16,7 +18,8 @@
 	font-optical-sizing: auto;
 	font-weight: 400;
 	font-style: normal;
-	font-size: 3.3rem;
+	font-size: 3.2rem;
+	transition: font-size 200ms;
 }
 
 .heading-large {
@@ -38,16 +41,30 @@
 	text-align: right;
 }
 
-body {
+* {
 	margin: 0;
 	padding: 0;
+}
+
+body {
 	color: white;
 	background: var(--c-background);
 }
 
 h1 {
-	margin: 0;
 	padding: 0.2em 1.5rem;
+}
+
+.split-h-2 {
+	display: flex;
+	flex-direction: row;
+	align-items: start;
+	justify-items: end;
+	gap: 3em;
+
+	&:has(#m16-v-i) {
+		padding: 8%;
+	}
 }
 
 .hero {
@@ -58,29 +75,79 @@ h1 {
 }
 
 .card-nav {
-	flex: 1;
+	flex: 1 1;
 	display: flex;
 	align-items: stretch;
 	justify-content: space-evenly;
 	border-top: var(--border);
 	border-bottom: var(--border);
+
+	& a:hover {
+		cursor: pointer;
+		flex-basis: 125%;
+		& :last-child {
+			font-size: 4rem;
+		}
+	}
 }
 
-a.card {
-	flex: 1 1 25%;
-	position: relative;
-	& > img {
-		height: 100%;
-		width: 100%;
-		object-fit: cover;	
+img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	outline: var(--glass-outline);
+	outline-offset: var(--glass-outline-offset);
+}
+
+#m16-pillar {
+	min-height: 120vh;
+	width: 36vw;
+	max-width: max-content;
+}
+
+figcaption {
+	text-align: justify;
+	text-justify: auto;
+	font-size: 1rem;
+}
+
+.hover-frame {
+	display: grid;
+	place-items: center;
+
+	& .show-on-hover {
+
+		opacity: 0;
 	}
+
+	&:hover {
+		& .show-on-hover {
+			opacity: 1;
+		}
+
+		& .hide-on-hover {
+			opacity: 0;
+		}		
+	}
+
+	& .show-on-hover, .hide-on-hover {
+		transition: opacity 1000ms ease-in-out;
+	}
+
+	& .overlay {
+		height: auto;
+	}
+
+	&#m16-v-i {
+		width: 45vw;
+		& img {
+			object-fit: contain;
+		}
+	}
+}
+.card {
+	flex: 1 1 100%;
 	& > .overlay {
-		position: absolute;
-		top: 0;
-		width: 100%;
-		height: 100%;
-		z-index: 1;
-		overflow: scroll;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
@@ -89,15 +156,26 @@ a.card {
 			margin: 1.5rem;
 		}
 	}
-	&:hover {
-		cursor: pointer;
-		flex-basis: 30%;
+	transition: flex-basis 200ms;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	overflow: scroll;
+
+	:has(> &) {
+		position: relative;
 	}
-	transition: flex-basis 250ms;
 }
 
 .banner {
 	& > h1 {
+		box-sizing: border-box;
+		padding-top: 0.7em;
 		display: flex;
 		gap: 0.5em;
 		align-items: start;
@@ -118,11 +196,39 @@ a.card {
 	}
 }
 
+.pillar-bg-gradient {
+	outline: var(--glass-outline);
+	outline-offset: var(--glass-outline-offset);
+	background:
+		linear-gradient(270deg, #29212C 37%, rgba(41, 33, 44, 0) 63%),
+		radial-gradient(9% 9% at 30% 82%, rgba(83, 57, 86, 0.8) 0%, rgba(83, 57, 86, 0) 100%),
+		radial-gradient(25% 16% at 30% 34%, #7D75AE 0%, rgba(93, 85, 139, 0.5) 43%, rgba(95, 87, 142, 0) 100%),
+		radial-gradient(30% 84% at 30% 70%, #863842 0%, rgba(128, 48, 51, 0) 100%),
+		radial-gradient(32% 47% at 30% 8%, #9eb2cc 0%, #7b85bc80 63%, rgba(123, 133, 188, 0) 100%),
+		#29212C;
+}
+
+#m16 {
+	& section:first-of-type {
+		background: 
+			linear-gradient(180deg, black, transparent),
+			linear-gradient(90deg, #9ea7cc22, transparent 63%);
+	}
+}
+
 .outlined-text {
+	/* Brute force outlined text, compatible */
 	color: var(--c-text);
+	--offset: 0.02em;
+	--offset-i: calc(0px - var(--offset));
+	--blur-radius: 1px;
 	text-shadow:
-		0.1rem 0.1rem 1px var(--c-stroke),
-		-0.1rem 0.1rem 1px var(--c-stroke),
-		-0.1rem -0.1rem 1px var(--c-stroke),
-		0.1rem -0.1rem 1px var(--c-stroke);
+		var(--offset) var(--offset-i) var(--blur-radius) var(--c-stroke),
+		calc(var(--offset) * 1.5) 0 var(--blur-radius) var(--c-stroke),
+		var(--offset) var(--offset) var(--blur-radius) var(--c-stroke),
+		0 calc(var(--offset-i) * 1.5) var(--blur-radius) var(--c-stroke),
+		0 calc(var(--offset) * 1.5) var(--blur-radius) var(--c-stroke),
+		var(--offset-i) var(--offset-i) var(--blur-radius) var(--c-stroke),
+		calc(var(--offset-i) * 1.5) 0 var(--blur-radius) var(--c-stroke),
+		var(--offset-i) var(--offset) var(--blur-radius) var(--c-stroke);
 }
