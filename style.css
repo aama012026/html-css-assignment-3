@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Genos:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
+	scroll-behavior: smooth;
 
 	--hydrogen-lavender: #a9889a;
 	--space-black: #29212c;
@@ -59,7 +60,7 @@ h1 {
 	display: flex;
 	flex-direction: row;
 	align-items: start;
-	justify-items: end;
+	justify-content: space-between;
 	gap: 3em;
 
 	&:has(#m16-v-i) {
@@ -105,6 +106,10 @@ img {
 	max-width: max-content;
 }
 
+#m16-poc-25th {
+	padding: 2.1vw;
+}
+
 figcaption {
 	text-align: justify;
 	text-justify: auto;
@@ -116,7 +121,6 @@ figcaption {
 	place-items: center;
 
 	& .show-on-hover {
-
 		opacity: 0;
 	}
 
@@ -144,6 +148,13 @@ figcaption {
 			object-fit: contain;
 		}
 	}
+
+	&#m16-poc-v-i {
+		min-width: 42.5vw;
+		width: 42.5vw;
+	}
+
+	
 }
 .card {
 	flex: 1 1 100%;
@@ -196,28 +207,56 @@ figcaption {
 	}
 }
 
-.pillar-bg-gradient {
-	outline: var(--glass-outline);
-	outline-offset: var(--glass-outline-offset);
-	background:
-		linear-gradient(270deg, #29212C 37%, rgba(41, 33, 44, 0) 63%),
-		radial-gradient(9% 9% at 30% 82%, rgba(83, 57, 86, 0.8) 0%, rgba(83, 57, 86, 0) 100%),
-		radial-gradient(25% 16% at 30% 34%, #7D75AE 0%, rgba(93, 85, 139, 0.5) 43%, rgba(95, 87, 142, 0) 100%),
-		radial-gradient(30% 84% at 30% 70%, #863842 0%, rgba(128, 48, 51, 0) 100%),
-		radial-gradient(32% 47% at 30% 8%, #9eb2cc 0%, #7b85bc80 63%, rgba(123, 133, 188, 0) 100%),
-		#29212C;
-}
+
 
 #m16 {
-	& section:first-of-type {
+	background: black;
+
+	& section:has(+ .pillar-bg-gradient) {
 		background: 
 			linear-gradient(180deg, black, transparent),
-			linear-gradient(90deg, #9ea7cc22, transparent 63%);
+			linear-gradient(90deg, #9ea7cc22, transparent 63%),
+			var(--space-black);
+	}
+
+	& .pillar-bg-gradient {
+		outline: var(--glass-outline);
+		outline-offset: var(--glass-outline-offset);
+		background:
+			linear-gradient(270deg, #29212C 37%, rgba(41, 33, 44, 0) 63%),
+			radial-gradient(9% 9% at 30% 82%, rgba(83, 57, 86, 0.8) 0%, rgba(83, 57, 86, 0) 100%),
+			radial-gradient(25% 16% at 30% 34%, #7D75AE 0%, rgba(93, 85, 139, 0.5) 43%, rgba(95, 87, 142, 0) 100%),
+			radial-gradient(30% 84% at 30% 70%, #863842 0%, rgba(128, 48, 51, 0) 100%),
+			radial-gradient(32% 47% at 30% 8%, #9eb2cc 0%, #7b85bc80 63%, rgba(123, 133, 188, 0) 100%),
+			#29212C;
+	}
+
+	& #m16-poc-25th {
+		background:
+			linear-gradient(0deg, black, transparent),
+			linear-gradient(90deg, #86384230, transparent 63%),
+			var(--space-black);
+	}
+	
+	#m16-poc-unwrap {
+		width: 88vw;
+		margin: auto;
+
+		& img {
+			outline: none;
+		}
+		
+		& figcaption {
+			padding: 0 2vw 0 3vw;
+			display: grid;
+			grid-template-columns: 1.09fr 1fr;
+			gap: 5.4vw;
+		}
 	}
 }
 
 .outlined-text {
-	/* Brute force outlined text, compatible */
+	/* Brute force outlined text, -webkit-text-stroke does not look good with certain fonts */
 	color: var(--c-text);
 	--offset: 0.02em;
 	--offset-i: calc(0px - var(--offset));

@@ -10,7 +10,7 @@
 <header class="hero">
 	<h1 class="heading-medium outlined-text">FOUR FAMOUS NEBULAE</h1>
 	<nav class="card-nav">
-		<a class="card">
+		<a href="#m16" class="card">
 			<img src="assets/images/M16-IRAC-MIPS-fs.png"
 				alt="Infrared capture of the Eagle nebula - a webby, green fog with a red glow radiating from the center."
 				>
@@ -19,7 +19,7 @@
 				<span class="heading-medium outlined-text center-text">Eagle Nebula</span>
 			</div>
 		</a>
-		<a class="card">
+		<a href="#m17" class="card">
 			<img src="assets/images/M17-infra.png"
 				alt="Infrared capture of the Omega Nebula - a clear V-shape with green radiation inside."
 			>
@@ -28,7 +28,7 @@
 				<span class="heading-medium outlined-text center-text">Omega Nebula</span>
 			</div>
 		</a>
-		<a class="card">
+		<a href="#m20" class="card">
 			<img src="assets/images/M20-NSF-DOE-IRGU-fs.png"
 				alt="The Trifid nebula expanded beyond visible light - a pink ball on a blue smoke with black streaks running across."
 			>
@@ -37,7 +37,7 @@
 				<span class="heading-medium outlined-text center-text">Trifid Nebula</span>
 			</div>
 		</a>
-		<a class="card">
+		<a href="#m8" class="card">
 			<img src="assets/images/M8-combined-fs.png"
 				alt="The Lagoon nebula in visible light and infrared - a column of dark smoke against a blue fog."
 			>
@@ -64,39 +64,102 @@
 				<span>Eagle Nebula</span>
 			</h1>
 		</div>
-		<div class="bg-gradient">
-			<section class="split-h-2">
-				<p>Here there will be a nice intro to the Eagle nebula, also known as M16.
-					Many points will be made and interesting facts pointed out.
-				</p>
-				<div class="hover-frame" id="m16-v-i">
+		<!-- M16 intro: Visual / Infra comparison -->
+		<section class="split-h-2">
+			<p>Here there will be a nice intro to the Eagle nebula, also known as M16.
+				Many points will be made and interesting facts pointed out.
+			</p>
+			<div class="hover-frame" id="m16-v-i">
+				<figure class="hide-on-hover">
+					<img src="assets/images/M16-RVB-tranl-hoverframe.png"
+						alt="The Eagle Nebula in visible light. It is mostly red."
+						>
+						<figcaption>The Eagle Nebula with filters mapped to color channels to represent visible light (RVB). Notice the prominent tendrils in the center, among them the famous "Pillars of Creation". Hover the image to view an infrared capture.</figcaption>
+				</figure>
+				<figure class="show-on-hover overlay">
+					<img src="assets/images/M16-IRAC-MIPS-transl-hoverframe.png"
+					alt="The Eagle Nebula in infrared. It is mostly green with a red radiation."
+					>
+					<figcaption>The image is a combination of infrared data (IRAC + MIPS) mapped to the color channels.</figcaption>
+				</figure>
+			</div>
+		</section>
+		<!-- Pillar section with quotes and impressive facts. -->
+		<section class="split-h-2 pillar-bg-gradient">
+			<figure id="m16-pillar">
+				<img src="assets/images/M16-pillar.png"
+					alt="A pillar in M16 glowing red at its base and blue at its head."
+				>
+				<figcaption>The height of this pillar spans 9.5 light-years, aprx. 7000 light-years from earth in the Serpens constallation. <b>Credit:</b> ESA/Hubble & NASA, K. Noll</figcaption>
+			</figure>
+		</section>
+		<!-- Pillars of Creation: 14 (25th) vs 95 and unwrap. -->
+		<section>
+			<div id="m16-poc-25th" class="split-h-2">
+				<div>
+					<h2>The Pillars of Creation</h2>
+					<p>This is where the rundown of the PoC goes. It will go through what they are, why they are famous and some
+						brief history of our relation to the pillars. It will then shift into the context of the unwrap below,
+						talking about the pocs and standalone pillars as features in the center of m16.
+					</p>
+				</div>
+				<div class="hover-frame" id="m16-poc-v-i">
 					<figure class="hide-on-hover">
-						<img src="assets/images/M16-RVB-tranl-hoverframe.png"
-							alt="The Eagle Nebula in visible light. It is mostly red."
+						<img src="assets/images/M16-PoC-HST14-SHO-transl-hoverframe.png"
+							alt="The three pillars of creation presents as opaque clay with bright green and yellow radiating from the shilouettes."
 							>
-							<figcaption>The Eagle Nebula with filters mapped to color channels to represent visible light (RVB). Notice the prominent tendrils in the center, among them the famous "Pillars of Creation". Hover the image to view an infrared capture.</figcaption>
+							<figcaption>
+								Hubble Space Telescope 25th anniversary image of the pillars of creation in visible light wavelengths.
+								Oxygen emission is blue, sulfur is orange, and hydrogen and nitrogen are green (RGB -> SII Ha-NII OIII).
+								<b>Credit:</b> NASA, ESA, and the Hubble Heritage Team (STScI/AURA)
+								(<a class="img-src" href="https://science.nasa.gov/asset/hubble/2014-hubble-wfc3uvis-image-of-m16/">source</a>)
+							</figcaption>
 					</figure>
 					<figure class="show-on-hover overlay">
-						<img src="assets/images/M16-IRAC-MIPS-transl-hoverframe.png"
-						alt="The Eagle Nebula in infrared. It is mostly green with a red radiation."
+						<img src="assets/images/M16-PoC-HST14-infra-transl-hoverframe.png"
+							alt="The pillars of creation in infrared. They are a translucent charcoal, and a multitude of stars are shining throug."
 						>
-						<figcaption>The image is a combination of infrared data (IRAC + MIPS) mapped to the color channels.</figcaption>
+						<figcaption>
+							The same view composed from 2 so called near-infrared filters:
+							Wavelengths of ~1,10µm are mapped to blue, and of ~1,60µm to yellow.
+							At these wavelengths we can see through the pillars and gaze upon the newborn stars.
+							<b>Credit:</b> NASA, ESA, and the Hubble Heritage Team (STScI/AURA)
+							(<a class="img-src" href="https://science.nasa.gov/asset/hubble/a-near-infrared-view-of-the-pillars-of-creation/">source</a>)
+						</figcaption>
 					</figure>
 				</div>
-			</section>
-			<section class="split-h-2 pillar-bg-gradient">
-				<figure id="m16-pillar">
-					<img src="assets/images/M16-pillar.png"
-						alt="A pillar in M16 glowing red at its base and blue at its head."
-					>
-					<figcaption>The height of this pillar spans 9.5 light-years, aprx. 7000 light-years from earth in the Serpens constallation. <b>Credit:</b> ESA/Hubble & NASA, K. Noll</figcaption>
-				</figure>
-			</section>
-			<section></section>
-		</div>
+			</div>
+			<figure id="m16-poc-unwrap">
+				<img src="assets/images/M16-PoC-unwrap-95-infra-card.png"
+					alt="The lone pillar, the pillars of creation and where their images map to the nebula's larger structure."
+				>
+				<figcaption class="split-h-2">
+					<p>
+						<q cite="https://www.jpl.nasa.gov/images/pia09109-unwrapping-the-pillars/">The pillars of the Eagle nebula, as seen in infrared light by NASA's Spitzer Space Telescope (bottom) and visible light by NASA's Hubble Space Telescope (top insets).</q>
+						<b>Credit:</b> NASA/JPL-Caltech/STScI/ Institut d'Astrophysique Spatiale
+						(<a class="img-src" href="https://www.jpl.nasa.gov/images/pia09109-unwrapping-the-pillars/">source</a>)
+					</p>
+					<p><q cite="https://images.nasa.gov/details/9514774">This image was taken on April 1, 1995 with the Hubble Space Telescope Wide Field Planetary Camera 2.
+							Red shows emissions from singly-ionized sulfur atoms, green shows emissions from hydrogen, and blue shows light emitted by doubly-ionized oxygen atoms.
+						</q>
+						<b>Credit:</b> J. Hester & P. Scowen (AZ State Uni.)/NASA
+						(<a class="img-src" href="https://images.nasa.gov/details/9514774">source</a>)
+					</p>
+				</figcaption>
+			</figure>
+		</section>
 	</article>
 	<article id="m17">
-		
+		<div class="banner">
+			<img src="assets/images/M17-NTT-EMMI-RVB-banner.png"
+				alt="M17 close up. Presents as a crack of light or dust storm in clay red and sea green."	
+			>
+			<h1 class="overlay heading-large outlined-text">
+				<span class="right-aligned">Messier 17</span>
+				<span class="divider">::</span>
+				<span>Omega Nebula</span>
+			</h1>
+		</div>
 	</article>
 	<article id="m20">
 		
