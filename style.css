@@ -1,17 +1,71 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Genos:ital,wght@0,100..900;1,100..900&display=swap');
-
 :root {
 	scroll-behavior: smooth;
 
 	--hydrogen-lavender: #a9889a;
+	--starglow: hsl(36, 29%, 10%);
 	--space-black: #29212c;
+	--space-blue: #0b141e;
 
 	--c-text: white;
 	--c-stroke: var(--hydrogen-lavender);
 	--border: 2px solid var(--c-stroke);
 	--glass-outline-offset: -1px;
 	--glass-outline: 1px solid #fff2;
-	--c-background: var(--space-black);
+	--c-background: black;
+	--normal-gap: 2.5vw;
+	--unwrap-card-right-padding: 7.6vw;
+	
+}
+
+h2 {
+	font-family: Genos, sans-serif;
+	font-size: 5vw;
+	font-weight: 200;
+	line-height: 100%;
+	letter-spacing: 8%;
+	text-align: center;
+	border-bottom:2px solid var(--c-text);
+}
+
+p, ul, li {
+	font-family: 'Exo 2', sans-serif;
+	/* font-size: 1.33rem; */
+	font-size: 1.4vw;
+	font-weight: 400;
+	line-height: 150%;
+	letter-spacing: 2%;
+
+	.squish & {
+		font-size: 1.25vw;
+		line-height: 130%;
+	}
+}
+
+blockquote, blockquote p {
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-size: 1.56vw;
+	font-weight: 600;
+	font-style: italic;
+	line-height: 130%;
+	letter-spacing: 0%;
+}
+
+.citation {
+	text-align: right;
+	font-size: 1.25vw;
+	
+	& .source::after {
+		content: ' - '
+	}
+	
+	& cite::after {
+		content: ', '
+	}
+}
+
+.credit {
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-size: 1.25vw;
 }
 
 .heading-medium {
@@ -47,6 +101,10 @@
 	padding: 0;
 }
 
+ul {
+	list-style-position: inside;
+}
+
 body {
 	color: white;
 	background: var(--c-background);
@@ -56,16 +114,71 @@ h1 {
 	padding: 0.2em 1.5rem;
 }
 
-.split-h-2 {
+.space-out {
 	display: flex;
-	flex-direction: row;
-	align-items: start;
 	justify-content: space-between;
-	gap: 3em;
+	gap: var(--normal-gap);	
+}
 
-	&:has(#m16-v-i) {
-		padding: 8%;
+.space-by-gap {
+	display: flex;
+	justify-content: start;
+	gap: 1.5lh;
+
+	&.squish {
+		gap: 1lh;
 	}
+}
+
+.horizontal {
+	flex-direction: row;
+}
+
+.vertical {
+	flex-direction: column;
+}
+
+.normal-gap {
+	padding: var(--normal-gap);
+	gap: var(--normal-gap);
+}
+
+.normal-margin {
+	margin: var(--normal-gap);
+}
+
+#m16-poc-25th {
+	padding: 6rem var(--unwrap-card-right-padding) 3rem 5vw;
+	gap: 5vw;
+}
+
+#m16-about {
+	padding: 4.5rem var(--unwrap-card-right-padding) 6rem 2.5vw;
+}
+
+#m16-spire-text {
+	padding: 0 var(--unwrap-card-right-padding) 0.75rem;
+	& blockquote {
+		margin: 0.5em 0 ;
+	}
+}
+
+#m17-about {
+	padding: 10.93vw 2.5vw 0 0;
+}
+
+#m20-about {
+	padding: 6rem 3rem 0;
+	background: linear-gradient(180deg, var(--space-blue), transparent);
+}
+
+#m8-about {
+	padding: 3rem 1.5rem;
+	background: linear-gradient(0deg, var(--starglow), transparent 20%, transparent 80%, var(--starglow));
+}
+
+#m8-img-cards {
+	padding: 0.75rem 1.5rem;
 }
 
 .hero {
@@ -93,21 +206,37 @@ h1 {
 }
 
 img {
-	height: 100%;
+	object-fit: contain;
+	aspect-ratio: auto;
 	width: 100%;
-	object-fit: cover;
-	outline: var(--glass-outline);
-	outline-offset: var(--glass-outline-offset);
+	.card & {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+		outline: var(--glass-outline);
+		outline-offset: var(--glass-outline-offset);
+	}
 }
 
-#m16-spire {
-	min-height: 120vh;
-	width: 36vw;
-	max-width: max-content;
+#m16-spire, #m17-sofia, #m20-97 {
+	min-width: 33.36vw;
+	max-width: 33.36vw;
 }
 
-#m16-poc-25th {
-	padding: 2.1vw;
+#m16-v-i {
+	min-width: 32.6vw;
+	& img {
+		object-fit: contain;
+	}
+}
+
+#m16-poc-v-i {
+	min-width: 37.5vw;
+	width: 37.5vw;
+}
+
+#m17-v-c {
+	min-width: 50vw;
 }
 
 figcaption {
@@ -118,7 +247,7 @@ figcaption {
 
 .hover-frame {
 	display: grid;
-	place-items: center;
+	place-items: start;
 
 	& .show-on-hover {
 		opacity: 0;
@@ -141,20 +270,6 @@ figcaption {
 	& .overlay {
 		height: auto;
 	}
-
-	&#m16-v-i {
-		width: 45vw;
-		& img {
-			object-fit: contain;
-		}
-	}
-
-	&#m16-poc-v-i {
-		min-width: 42.5vw;
-		width: 42.5vw;
-	}
-
-	
 }
 .card {
 	flex: 1 1 100%;
@@ -205,9 +320,26 @@ figcaption {
 			letter-spacing: 0.15ch;
 		}
 	}
+
+	& img {
+		width: 100vw;
+		height: 18.75vw;
+		object-fit: contain;
+	}
 }
 
+.glass {
+	outline: var(--glass-outline);
+	outline-offset: var(--glass-outline-offset);
+}
 
+#intro {
+	padding: var(--normal-gap);
+	background:
+		linear-gradient(180deg, transparent, #000b 13%, black),
+		linear-gradient(90deg, #050b2964, #00968e64 12%, #89554d64 26%, #42243464 50%, #70799e64 60%, #2a2d3864 75%, #424b6564 80%, #55423e64 91%, #23262d64),
+		black;
+}
 
 #m16 {
 	background: black;

@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Genos:ital,wght@0,100..900;1,100..900&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 	
 	<link rel="stylesheet" href="style.css">
 	<title>Four famous nebulae</title>
@@ -10,7 +14,7 @@
 <header class="hero">
 	<h1 class="heading-medium outlined-text">FOUR FAMOUS NEBULAE</h1>
 	<nav class="card-nav">
-		<a href="#m16" class="card">
+		<a href="#m16" class="card glass">
 			<img src="assets/images/M16-IRAC-MIPS-fs.jpg"
 				alt="Infrared capture of the Eagle nebula - a webby, green fog with a red glow radiating from the center."
 				>
@@ -19,7 +23,7 @@
 				<span class="heading-medium outlined-text center-text">Eagle Nebula</span>
 			</div>
 		</a>
-		<a href="#m17" class="card">
+		<a href="#m17" class="card glass">
 			<img src="assets/images/M17-infra.jpg"
 				alt="Infrared capture of the Omega Nebula - a clear V-shape with green radiation inside."
 			>
@@ -28,7 +32,7 @@
 				<span class="heading-medium outlined-text center-text">Omega Nebula</span>
 			</div>
 		</a>
-		<a href="#m20" class="card">
+		<a href="#m20" class="card glass">
 			<img src="assets/images/M20-NSF-DOE-IRGU-fs.jpg"
 				alt="The Trifid nebula expanded beyond visible light - a pink ball on a blue smoke with black streaks running across."
 			>
@@ -37,7 +41,7 @@
 				<span class="heading-medium outlined-text center-text">Trifid Nebula</span>
 			</div>
 		</a>
-		<a href="#m8" class="card">
+		<a href="#m8" class="card glass">
 			<img src="assets/images/M8-combined-fs.jpg"
 				alt="The Lagoon nebula in visible light and infrared - a column of dark smoke against a blue fog."
 			>
@@ -50,7 +54,7 @@
 </header>
 	
 <main>
-	<section class="intro">
+	<section id="intro" class="space-out vertical">
 		<p class="headingless">
 			All four of the nebulae covered are diffuse emission nebula, or so called H II regions. This means they are molecular clouds emitting ionized
 			atomic hydrogen,  which tends to happen where star formation has recently taken place. The eagle nebula is located in the Serpens constellation,
@@ -64,14 +68,14 @@
 			differently from the rest of the arm.
 		</p></blockquote>
 		<p class="citation">
-			<span class="source">Propulsion Laboratory</span>
+			<span class="source">Jet Propulsion Laboratory</span>
 			<cite><a href="https://www.jpl.nasa.gov/images/pia24577-four-famous-nebulae/" target="_blank">Four Famous Nebulae</a></cite>
 			<time datetime="2021-08-17">Aug. 17, 2021</time>
 		</p>
 	</section>
 
 	<article id="m16">
-		<div class="banner">
+		<div class="banner glass">
 			<img src="assets/images/M17-M16-Sharpless-2-64-HaRGB-banner.jpg"
 				alt="Starfilled space with M17 top left and M16 center."	
 			>
@@ -82,7 +86,7 @@
 			</h1>
 		</div>
 		<!-- M16 intro: Visual / Infra comparison -->
-		<section class="split-h-2">
+		<section id="m16-about" class="space-out horizontal">
 			<div class="space-out vertical">
 				<p class="headingless">
 					Both of M16s names refer to visual impressions of the dark silhouette near the center of the nebula known as the <i>Pillars of Creation</i>
@@ -99,7 +103,8 @@
 			</div>
 			<div class="hover-frame" id="m16-v-i">
 				<figure class="hide-on-hover">
-					<img src="assets/images/M16-RVB-tranl-hoverframe.jpg"
+					<img class="glass"
+						src="assets/images/M16-RVB-tranl-hoverframe.jpg"
 						alt="The Eagle Nebula in visible light. It is mostly red."
 					>
 					<figcaption>The Eagle Nebula with filters mapped to color channels to represent visible light (RVB). Notice the prominent tendrils in the
@@ -107,7 +112,8 @@
 					</figcaption>
 				</figure>
 				<figure class="show-on-hover overlay">
-					<img src="assets/images/M16-IRAC-MIPS-transl-hoverframe.jpg"
+					<img class="glass"
+						src="assets/images/M16-IRAC-MIPS-transl-hoverframe.jpg"
 						alt="The Eagle Nebula in infrared. It is mostly green with a red radiation."
 					>
 					<figcaption>The image is a combination of infrared data (IRAC + MIPS) mapped to the color channels.</figcaption>
@@ -115,7 +121,7 @@
 			</div>
 		</section>
 		<!-- M16 Spire -->
-		<section class="split-h-2 pillar-bg-gradient">
+		<section class="space-out horizontal pillar-bg-gradient">
 			<figure id="m16-spire">
 				<img src="assets/images/M16-pillar.jpg"
 					alt="A pillar in M16 glowing red at its base and blue at its head."
@@ -124,9 +130,9 @@
 					<b>Credit:</b> ESA/Hubble & NASA, K. Noll
 				</figcaption>
 			</figure>
-			<div class="space-out vertical">
+			<div id="m16-spire-text">
 				<h2>The Spire</h2>
-				<blockquote cite="https://science.nasa.gov/asset/hubble/eagle-nebula-pillar/">
+				<blockquote class="space-out vertical" cite="https://science.nasa.gov/asset/hubble/eagle-nebula-pillar/">
 					<p>Though this towering structure of billowing gas and dark, obscuring dust is only a small portion of the Eagle Nebula (Messier 16),
 						it is no less majestic in appearance for it. The pillar rises 9.5 light-years tall and is 7,000 light-years away from Earth. This
 						latest Hubble view uses new processing techniques and is part of ESA/Hubble’s 35th anniversary celebrations.
@@ -154,8 +160,8 @@
 		</section>
 		<!-- Pillars of Creation: 14 (25th) vs 95 and unwrap. -->
 		<section>
-			<div id="m16-poc-25th" class="split-h-2">
-				<div>
+			<div id="m16-poc-25th" class="space-out horizontal">
+				<div class="space-out vertical">
 					<h2>Pillars of Creation</h2>
 					<p>The <i>Pillars of Creation</i> get their name from a photograph taken with the <b>Hubble Space Telescope</b>
 						<time datetime="1995-04-01">April 1st, 1995</time> by astronomers Jeff Hester and Paul Scowen (bottom right). It depicts elephant
@@ -247,13 +253,14 @@
 					<figcaption>The image is a combination of infrared data (IRAC + MIPS) mapped to the color channels.</figcaption>
 				</figure>
 			</div>
-			<div id="m17-about" class="space-out vertical">
+			<div id="m17-about">
 				<p class="headingless">The Omega nebula was catalogued by Charles Messier in 1764. The feature is also known as the <i>Swan nebula</i>, <i>Checkmark nebula</i>,
 					<i>Lobster nebula</i> as well as the <i>Horseshoe nebula</i>. This vast region of gas, dust and hot young stars lies in the heart of the
 					Milky Way in the constellation of Sagittarius (The Archer). It is one of the brightest and most massive star-forming regions in our galaxy.
 					The surrounding cloud of interstellar matter is roughly 40 light-years in diameter and has a mass 30 000 times the sun. The nebula itself
 					has a mass estimated 800 times that of our sun. <b>M17</b> is also cataloged as <b>NGC 6618</b>.
 				</p>
+				<br>
 				<p>The two images of the nebula to the left are both some of the sharpest images showing the entire nebula. The visual light
 					<abbr title="Hydrogen-alpha Red Visual(green) Blue">HaRVB</abbr> image was captured by the <b>Wide Field Imager</b> on the MPG/ESO 2.2-metre
 					telescope at ESO’s La Silla Observatory in Chile, and the infrared-shifted <abbr title="Infrared Red Green">IRG</abbr> image with the VLT
@@ -261,8 +268,8 @@
 				</p>
 			</div>
 		</section>
-		<section class="space-out horizontal">
-			<div class="space-out vertical">
+		<section id="m17-observations-by-sofia" class="space-out horizontal normal-gap">
+			<div class="space-by-gap vertical">
 				<h2>Observations by SOFIA</h2>
 				<p>In January 2020, the Stratospheric Observatory for Infrared Astronomy (SOFIA) provided new insights into how the Omega Nebula hatched:</p>
 				<blockquote cite="https://www.jpl.nasa.gov/images/pia23409-sofia-reveals-how-the-swan-nebula-hatched/">
@@ -279,14 +286,14 @@
 					<time datetime="2020-01-07">Jan. 7, 2020</time>
 				</p>
 			</div>
-			<figure>
+			<figure id="m17-sofia">
 				<img src="assets/images/M17-SOFIA-composite.jpg"
 					alt="M17 radiates blue from inside in this capture by SOFIA."
 				>
 				<figcaption class="credit overlay glass"><b>Credit:</b> NASA/SOFIA/Lim, De Buizer, & Radomski et al.; ESA/Herschel; NASA/JPL-Caltech</figcaption>
 			</figure>
 		</section>
-		<section>
+		<section class="normal-gap">
 			<p>Placeholder for talking about close-up images in the omega nebula.</p>
 			<div class="space-out horizontal">
 				<figure>
@@ -328,9 +335,9 @@
 			</h1>
 		</div>
 		<section>
-			<div class="space-out horizontal">
-				<div class="space-out vertical">
-					<p>The Trifid Nebula also goes by the designations <b>Messier 20</b> and <b>NGC 6514</b>. It is an H II region, but is a peculiar
+			<div id="m20-about" class="space-out horizontal">
+				<div class="space-by-gap vertical squish">
+					<p class="headingless">The Trifid Nebula also goes by the designations <b>Messier 20</b> and <b>NGC 6514</b>. It is an H II region, but is a peculiar
 						combination of an open cluster of stars, an emmision nebula (the dense, reddish-pink portion), a reflection nebula contributing the
 						blue part, and a dark nebula, responsible for the the apparent gaps in the emmision nebula. M20 is located in the north-west of
 						Sagittarius in a star-forming region in the Milky Way's Scutum–Centaurus Arm. It was discovered by Charles Messier in 1764 and its name
@@ -340,20 +347,18 @@
 						from hydrogen atoms, ionized sulfur atoms, and doubly ionized oxygen atoms. The images were combined into a false-color composite 
 						(<abbr title="Sulfur Hydrogen Oxygen">SHO</abbr>) picture to suggest how the nebula might look to the eye (closeup shown on the right).
 					</p>
-					<p>The images below show the nebula captured with different filters:
-						<ul>
+						<ul>The images below show the nebula captured with different filters:
 							<li>NOAO is ground based and captures mostly visible wavelenghts and near infrared.</li>
-							<li>Both IRAC and MIPS are instruments on the Spitzer Space Telescope that captures ifrared wavelength.</li>
+							<li>Both IRAC and MIPS are instruments on the Spitzer Space Telescope that captures infrared light.</li>
 							<li>The Infrared Array Camera captures bands of shorter wavelengths.</li>
 							<li>The Multiband Imaging Photometer for Spitzer captures longer wavelengths of infrared.</li>
 						</ul>
-					</p>
 					<p>As you can see, the data from the filters, gathered as monochrome images, can be mapped differently to color channels depending on the
 						goal. The SHO mentioned above happens to correspond to the three color channels (SHO → RGB), but mappings can also be far more complex.
 					</p>
 				</div>
-				<figure>
-					<img href="assets/images/M20-HST-97-SHO.jpg"
+				<figure id="m20-97">
+					<img src="assets/images/M20-HST-97-SHO.jpg"
 						alt="Closeup in M20 shows a stellar jet protruding from a dense cloud of dust and gas."	
 					>
 					<figcaption class="credit">This stellar jet is emerging from a stellar nursery 8 <abbr title="light-years">ly</abbr> from M20s central star.
@@ -378,7 +383,7 @@
 				<span>Lagoon Nebula</span>
 			</h1>
 		</div>
-		<section>
+		<section id="m8-about" class="space-by-gap vertical">
 			<p class="headingless">Messier 8, also catalogued as <b>NGC 6523</b>, <b>Sharpless 25</b>, <b>RCW 146</b>, and <b>Gum 72</b>, gets its name from
 				the water-like features when seen from afar. The Lagoon nebula is an emission nebula, as the other nebulas, with an H II region. It is, however,
 				set apart by its giant size. The nebula spans 100 by 50 light years, and is located in the constellation Sagittarius, approximately 4000-6000
@@ -386,21 +391,21 @@
 				(from mid-northern latitudes). When viewed through binoculars or telescopes, it appears gray due to the human eye’s limited color sensitivity
 				in dim light. When captured in long exposure images though, it presents as hot pink.				
 			</p>
-			<div class="space-out horizontal">
+			<div id="m8-img-cards" class="space-out horizontal">
 				<figure>
-					<img href="assets/images/M8-infrared.jpg"
+					<img src="assets/images/M8-infrared.jpg"
 						alt="M8 in infrared, a translucent blue smoke in a sea of stars, the brightest in the middle."
 					>
 					<figcaption class="credit"><b>Credit:</b> NASA, ESA, and STScI</figcaption>
 				</figure>
 				<figure>
-					<img href="assets/images/M8-combined-medium.jpg"
+					<img src="assets/images/M8-combined-medium.jpg"
 						alt="Composite of M8 from infrared and visible light. The smoke is dark and a blue haze is masking most stars behind the nebula."
 					>
 					<figcaption class="credit"><b>Credit:</b> NASA, ESA, J. Trauger (JPL)</figcaption>
 				</figure>
 				<figure>
-					<img href="assets/images/M8-visible-light.jpg"
+					<img src="assets/images/M8-visible-light.jpg"
 						alt="M8 in visible light. The smoke is now a completely opaque, rust-colored dust cloud on a sea green backdrop."
 					>
 					<figcaption class="credit"><b>Credit:</b> NASA, ESA, and STScI</figcaption>
