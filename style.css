@@ -5,6 +5,8 @@
 	--starglow: hsl(36, 29%, 10%);
 	--space-black: #29212c;
 	--space-blue: #0b141e;
+	--pillar-blue: #a9b2d0;
+	--hydrogen-clay: #c08896;
 
 	--c-text: white;
 	--c-stroke: var(--hydrogen-lavender);
@@ -41,6 +43,27 @@ p, ul, li {
 	}
 }
 
+.headingless {
+	&::first-line {
+		text-decoration: underline;
+		font-weight: 600;
+		& b {
+			font-weight: 800;
+		}
+	}
+	&::first-letter {
+		font-weight: 900;
+		font-size: 1.8vw;
+	}
+}
+
+a {
+	color: var(--pillar-blue);
+	&:visited {
+		color: var(--hydrogen-clay);
+	}
+}
+
 blockquote, blockquote p {
 	font-family: 'IBM Plex Sans', sans-serif;
 	font-size: 1.56vw;
@@ -63,9 +86,11 @@ blockquote, blockquote p {
 	}
 }
 
-.credit {
+figcaption, .caption {
 	font-family: 'IBM Plex Sans', sans-serif;
 	font-size: 1.25vw;
+	line-height: 130%;
+	letter-spacing: 0%;
 }
 
 .heading-medium {
@@ -141,10 +166,6 @@ h1 {
 .normal-gap {
 	padding: var(--normal-gap);
 	gap: var(--normal-gap);
-}
-
-.normal-margin {
-	margin: var(--normal-gap);
 }
 
 #m16-poc-25th {
@@ -296,6 +317,15 @@ figcaption {
 	:has(> &) {
 		position: relative;
 	}
+
+	figcaption& {
+		box-sizing: border-box;
+		height: fit-content;
+		top: auto;
+		bottom: 4px;
+		--c-stroke: black;
+		padding: 0.25em 0.5em;
+	}
 }
 
 .banner {
@@ -331,6 +361,10 @@ figcaption {
 .glass {
 	outline: var(--glass-outline);
 	outline-offset: var(--glass-outline-offset);
+	&.overlay {
+		background: #0d0d0d2c;
+		backdrop-filter: blur(1px);
+	}
 }
 
 #intro {
